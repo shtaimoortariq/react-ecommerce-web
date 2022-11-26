@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { userAuthWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
+import { signUpWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
 
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
@@ -37,7 +37,7 @@ const SignUpForm = () => {
         };
 
         try {
-            const { user } = await userAuthWithEmailAndPassword(email, password);
+            const { user } = await signUpWithEmailAndPassword(email, password);
             const userDocRef = await createUserDocumentFromAuth({ ...user, displayName });
             setFormFields(defaultFormField);
         } catch (error) {
@@ -56,11 +56,11 @@ const SignUpForm = () => {
             <form onSubmit={submitHandler}>
 
                 <FormInput label="Display Name" inputOptions={{ type: "text", required: true, name: "displayName", value: displayName, onChange: handleOnChange }} />
-                <FormInput label="Email" inputOptions={{ type: "email", required: true, name:"email", value: email, onChange: handleOnChange }} />
-                <FormInput label="Password" inputOptions={{ type: "password", required: true, name:"password", value: password, onChange: handleOnChange }} />
-                <FormInput label="Confirm Password" inputOptions={{ type: "password", required: true, name:"confirmPassword", value: confirmPassword, onChange: handleOnChange }} />
+                <FormInput label="Email" inputOptions={{ type: "email", required: true, name: "email", value: email, onChange: handleOnChange }} />
+                <FormInput label="Password" inputOptions={{ type: "password", required: true, name: "password", value: password, onChange: handleOnChange }} />
+                <FormInput label="Confirm Password" inputOptions={{ type: "password", required: true, name: "confirmPassword", value: confirmPassword, onChange: handleOnChange }} />
 
-                <Button type="submit">Submit</Button>
+                <Button buttonType="google" type="submit">Submit</Button>
             </form>
         </div>
     )

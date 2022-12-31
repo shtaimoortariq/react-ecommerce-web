@@ -8,8 +8,8 @@ const Shop = () => {
     return (
         <div>
             <Routes>
-                <Route index element={  <CategoriesPreview /> } />
-                <Route path=":category" element={  <Category /> } />
+                <Route index element={ <CategoriesPreview /> } />
+                <Route path=":category" element={ <Category /> } />
             </Routes>
         </div>
     )

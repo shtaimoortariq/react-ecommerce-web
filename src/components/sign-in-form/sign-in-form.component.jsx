@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import FormInput from '../../components/form-input/form-input.component';
-import Button from '../button/button.component';
+import Button, {BUTTON_TYPE_CLASS} from '../button/button.component';
 import './sign-in-form.styles.scss'
 import { UserContext } from '../../context/user.context'
 import {
@@ -66,7 +66,7 @@ const SignInForm = () => {
                 <FormInput label="Password" inputOptions={{ type: "password", name: "password", value: password, onChange: handleOnChange, required: true }} />
                 <div className="buttons-container">
                     <Button type="submit">Login</Button>
-                    <Button buttonType="google" type="submit" onClick={signInWithGoogle}>Google Sign In</Button>
+                    <Button buttonType={BUTTON_TYPE_CLASS.google} type="submit" onClick={signInWithGoogle}>Google Sign In</Button>
                 </div>
 
             </form>

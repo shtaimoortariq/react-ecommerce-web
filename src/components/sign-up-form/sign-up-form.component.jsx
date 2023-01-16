@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { signUpWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
 
 import FormInput from '../form-input/form-input.component';
-import Button from '../button/button.component';
+import Button, {BUTTON_TYPE_CLASS} from '../button/button.component';
 
 import {UserContext} from  '../../context/user.context';
 
@@ -61,7 +61,7 @@ const SignUpForm = () => {
                 <FormInput label="Password" inputOptions={{ type: "password", required: true, name: "password", value: password, onChange: handleOnChange }} />
                 <FormInput label="Confirm Password" inputOptions={{ type: "password", required: true, name: "confirmPassword", value: confirmPassword, onChange: handleOnChange }} />
 
-                <Button buttonType="google" type="submit">Submit</Button>
+                <Button buttonType={BUTTON_TYPE_CLASS.google} type="submit">Submit</Button>
             </form>
         </div>
     )

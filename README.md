@@ -3,3 +3,4 @@
 Authentication using firebase and context
 Proucts and Cart UI using Styles Component
 Business Logic in Context Api
+Redux Implementation

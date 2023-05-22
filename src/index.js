@@ -20,9 +20,9 @@ root.render(
     <BrowserRouter>
       {/* <UserProvider> */}
         {/* <CategoriesProvider> */}
-          <CartProvider>
+          {/* <CartProvider> */}
             <App />
-          </CartProvider>
+          {/* </CartProvider> */}
         {/* </CategoriesProvider> */}
       {/* </UserProvider> */}
     </BrowserRouter>

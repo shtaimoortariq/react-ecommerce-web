@@ -3,7 +3,7 @@ import {Route, Routes} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 
 import { getCategoriesAndCollection} from '../../utils/firebase/firebase.utils';
-import { setCategories } from '../../store/categories/category.action';
+import { setCategories } from '../../store/categories/category.reducer';
 import CategoriesPreview from '../categories-preview/categories-preview.component'
 import Category from '../category/category.component';
 import './shop.styles.scss';

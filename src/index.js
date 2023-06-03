@@ -1,35 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 // import { UserProvider } from './context/user.context';
 // import { CategoriesProvider } from './context/categories.context';
 // import { CartProvider } from './context/cart.context';
 
-import {PersistGate} from 'redux-persist/integration/react';
-import { Provider } from 'react-redux';
-import {persistor, store} from './store/store'
-import './index.scss';
+import { PersistGate } from "redux-persist/integration/react";
+import { Provider } from "react-redux";
+import { persistor, store } from "./store/store";
+import "./index.scss";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   // <React.StrictMode>
-    <Provider store={store}>
-      
-    <PersistGate persistor={ persistor }></PersistGate>
+  <Provider store={store}>
+    {/* <PersistGate persistor={persistor}> */}
     <BrowserRouter>
       {/* <UserProvider> */}
-        {/* <CategoriesProvider> */}
-          {/* <CartProvider> */}
-            <App />
-          {/* </CartProvider> */}
-        {/* </CategoriesProvider> */}
+      {/* <CategoriesProvider> */}
+      {/* <CartProvider> */}
+      <App />
+      {/* </CartProvider> */}
+      {/* </CategoriesProvider> */}
       {/* </UserProvider> */}
     </BrowserRouter>
-    </Provider>
+    {/* </PersistGate> */}
+  </Provider>
   // </React.StrictMode>
 );
 

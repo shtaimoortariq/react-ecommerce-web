@@ -72,7 +72,6 @@ export function* signOut() {
 
 export function* signInAfterSignUp({ payload: { user, additionalDetails } }) {
   // try {
-  debugger;
   yield call(createUserDocumentFromAuth, user, additionalDetails);
 
   // } catch (error) {}
@@ -88,7 +87,6 @@ export function* signInWithGoogle() {
 }
 
 export function* onSignUpSuccess() {
-  debugger;
   yield takeLatest(USER_ACTION_TYPES.SIGN_UP_SUCCESS, signInAfterSignUp);
 }
 export function* onSignUpStart() {
